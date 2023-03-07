@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Projects
+{% endblock title %}
+
+{% block content%}
+<div>
+    <h1>My Projects</h1>
+    {% if all_projects|length == 0 %}
+    <p>You are not assigned to any projects</p>
+    {% else %}
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Number of tasks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for project in all_projects %}
+                <td>{{project.name}}</td>
+                <td></td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    {% endif %}
+
+</div>
+{% endblock content%}
